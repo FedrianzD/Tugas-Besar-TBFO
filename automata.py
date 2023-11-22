@@ -26,27 +26,33 @@ def readTxt(filename):
             globalvar.sta_str = line.rstrip('\n')
             i+=1
         else:
-            globalvar.rules.append(line.rstrip('\n').split(" "))
+            globalvar.rulestxt.append(line.rstrip('\n').split(" "))
 
 readTxt("a.txt")
-print(globalvar.state)
-print(globalvar.insymbol)
-print(globalvar.stasymbol)
-print(globalvar.currstate)
-print(globalvar.stack)
-print(globalvar.final)
-print(globalvar.sta_str)
-print(globalvar.rules)
+# print(globalvar.state)
+# print(globalvar.insymbol)
+# print(globalvar.stasymbol)
+# print(globalvar.currstate)
+# print(globalvar.stack)
+# print(globalvar.final)
+# print(globalvar.sta_str)
+# print(globalvar.rulestxt)
 
-dic = {}
-dic[globalvar.rules[0][0]] = {globalvar.rules[0][1] : {globalvar.rules[0][2] : {globalvar.rules[0][3]: globalvar.rules[0][4]}}}
-for i in range(len(globalvar.rules)):
-    if globalvar.rules[i][0] in dic:
-        if globalvar.rules[i][1] in dic[globalvar.rules[i][0]]:
-            dic[globalvar.rules[i][0]][globalvar.rules[i][1]][globalvar.rules[i][2]] =  {globalvar.rules[i][3]:globalvar.rules[i][4]}
-        else: 
-            dic[globalvar.rules[i][0]][globalvar.rules[i][1]] =  {globalvar.rules[i][2] : {globalvar.rules[i][3]:globalvar.rules[i][4]}}
-    else:
-        dic[globalvar.rules[i][0]] = {globalvar.rules[i][1] : {globalvar.rules[i][2] : {globalvar.rules[i][3]:globalvar.rules[i][4]}}}
-
-print(dic)
+def rulesprocess():
+    rules = {}
+    rules[globalvar.rulestxt[0][0]] = {globalvar.rulestxt[0][1] : {globalvar.rulestxt[0][2] : {globalvar.rulestxt[0][3]: globalvar.rulestxt[0][4]}}}
+    for i in range(len(globalvar.rulestxt)):
+        if globalvar.rulestxt[i][0] in rules:
+            if globalvar.rulestxt[i][1] in rules[globalvar.rulestxt[i][0]]:
+                rules[globalvar.rulestxt[i][0]][globalvar.rulestxt[i][1]][globalvar.rulestxt[i][2]] =  {globalvar.rulestxt[i][3]:globalvar.rulestxt[i][4]}
+            else: 
+                rules[globalvar.rulestxt[i][0]][globalvar.rulestxt[i][1]] =  {globalvar.rulestxt[i][2] : {globalvar.rulestxt[i][3]:globalvar.rulestxt[i][4]}}
+        else:
+            rules[globalvar.rulestxt[i][0]] = {globalvar.rulestxt[i][1] : {globalvar.rulestxt[i][2] : {globalvar.rulestxt[i][3]:globalvar.rulestxt[i][4]}}}
+    return rules
+print(rulesprocess())
+currState = globalvar.currstate
+input = globalvar.insymbol
+stacksymbol = globalvar.stasymbol
+def process(currState, input, stacksymbol):
+    print()

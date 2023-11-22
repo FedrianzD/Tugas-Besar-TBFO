@@ -5,4 +5,4 @@ currstate = ''
 stack = []
 final = ''
 sta_str = ''
-rules = []
+rulestxt = []
