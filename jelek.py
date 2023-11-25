@@ -36,10 +36,8 @@ def editArr(arr):
         if (arr[i] == 'src'):
             if (arr[i+4] != 'alt') and arr[i+2] == '%':
                 arr.insert(i+4, 'eps')
-                print("ada isi")
             elif (arr[i+3] != 'alt') and arr[i+2] == '"':
                 arr.insert(i+3, 'eps')
-                print("gaada isi")
         i += 1 
     for i in range(4):
         arr.pop(len(arr)-1)
@@ -47,7 +45,6 @@ def editArr(arr):
 # Nambahin eps ke input
 
     arr.append('temp')
-    print("ok")
     i = 0  
     while i < len(arr)-1:
         if (arr[i] == 'input') and (arr[i+1] != 'type'):
@@ -131,12 +128,9 @@ class MyHTMLParser(HTMLParser):
         if tag in ['html', 'head', 'body', 'title', 'script', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'em', 'b', 'abbr', 'strong', 'small', 'div', 'th', 'td', 'tr', 'table', 'img', 'br', 'hr', 'a', 'button', 'link', 'form', 'input']:
             
             for item in HTMLParser.get_starttag_text(self).split(" "):
-                print(item)
                 if '=' in list(item):
                     arr.append('=')
                 for item_i in item.split("="):
-                    print(arr)
-                    print(item_i)
                     # arr.append("=")
                     # tanganiTeks(arr, item_i)
                     for item_i_j in item_i.split("/"):
