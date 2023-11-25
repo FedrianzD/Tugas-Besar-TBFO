@@ -188,5 +188,4 @@ with open(pathlowerindex, 'r', encoding='utf-8') as file:
 
 parser.feed(htmlfile)
 editArr(arr)
-print(arr)
 
