@@ -3,7 +3,7 @@ import numpy as np
 
 arr = []
 
-accepted_tag = ['<html>', '<head>', '<body>', '<title>', '<script>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>', '<p>', '<em>', '<b>', '<abbr>', '<strong>', '<small>', '<div>', '<th>', '<td>', '<tr>', '<table>', '<img>', '<br>', '<hr>', '<a>', '<button>', '<link>', '<form>', '<input>', 'Rel', 'href', 'src', 'alt', 'type', 'action', 'method', '</html>', '</head>', '</body>', '</title>', '</script>', '</h1>', '</h2>', '</h3>', '</h4>', '</h5>', '</h6>', '</p>', '</em>', '</b>', '</abbr>', '</strong>', '</small>', '</div>', '</th>', '</td>', '</tr>', '>', '"', 'get', '/>', 'post', 'submit', 'reset', 'button', '</button>', '</form>', '</a>', '</script>', '%', 'eps', 'class', 'id', 'style', 'text' , 'password', 'email', 'number', 'checkbox', 'input']
+accepted_tag = ['<html>', '<head>', '<body>', '<title>', '<script>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>', '<p>', '<em>', '<b>', '<abbr>', '<strong>', '<small>', '<div>', '<th>', '<td>', '<tr>', '<table>', '<img>', '<br>', '<hr>', '<a>', '<button>', '<link>', '<form>', '<input>', 'Rel', 'href', 'src', 'alt', 'type', 'action', 'method', '</html>', '</head>', '</body>', '</title>', '</script>', '</h1>', '</h2>', '</h3>', '</h4>', '</h5>', '</h6>', '</p>', '</em>', '</b>', '</abbr>', '</strong>', '</small>', '</div>', '</th>', '</td>', '</tr>', '>', '"', 'get', '/>', 'post', 'submit', 'reset', 'button', '</button>', '</form>', '</a>', '</script>', '%', 'eps', 'class', 'id', 'style', 'text' , 'password', 'email', 'number', 'checkbox', 'input', '=']
 
 
 def editArr(arr):
@@ -101,6 +101,17 @@ def editArr(arr):
             i += 1
     arr.pop(len(arr)-1)
 
+# Switch = sama elemen selanjutnya. 
+    # arr.append('temp')
+    i = 0
+    while i < len(arr) -1 :
+        if arr[i] == '=':
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+            i += 2
+        else:
+            i += 1
+    # arr.pop(len(arr)-1)
+
 def tanganiTeks(arr, item):
     # arr.append("ini teks ->")
     if item[0] == "\"" and item[-1] == "\"":
@@ -118,8 +129,15 @@ class MyHTMLParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         # pass
         if tag in ['html', 'head', 'body', 'title', 'script', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'em', 'b', 'abbr', 'strong', 'small', 'div', 'th', 'td', 'tr', 'table', 'img', 'br', 'hr', 'a', 'button', 'link', 'form', 'input']:
+            
             for item in HTMLParser.get_starttag_text(self).split(" "):
+                print(item)
+                if '=' in list(item):
+                    arr.append('=')
                 for item_i in item.split("="):
+                    print(arr)
+                    print(item_i)
+                    # arr.append("=")
                     # tanganiTeks(arr, item_i)
                     for item_i_j in item_i.split("/"):
                         if ">" in item_i_j:
@@ -170,4 +188,5 @@ with open(pathlowerindex, 'r', encoding='utf-8') as file:
 
 parser.feed(htmlfile)
 editArr(arr)
+print(arr)
 
