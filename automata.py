@@ -59,8 +59,10 @@ def process(currState, input, stack):
             elif len(rules[currState][input][top(stack)][1]) == 2: # kalo len = 2, berati ada yang di push
                 globalvar.stack.append(list(rules[currState][input][top(stack)][1])[0])
         else: # gak ada di fungsi transisi
+            print(input)
             return True
     else: # gak di fungsi transisi
+        print(input)
         return True
 rules = rulesprocess()
 input = jelek.arr
