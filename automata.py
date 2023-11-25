@@ -1,5 +1,6 @@
 import globalvar
 import json
+import jelek
 
 def readTxt(filename):
     lines = open(filename, 'rt')
@@ -62,7 +63,7 @@ def process(currState, input, stack):
     else: # gak di fungsi transisi
         return True
 rules = rulesprocess()
-input = ['<html>', '<head>', '</head>', '<body>', '<body>', '</html>']
+input = jelek.arr
 input.reverse()
 while True:
     stack = globalvar.stack
