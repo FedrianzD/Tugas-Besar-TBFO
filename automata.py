@@ -1,4 +1,5 @@
 import globalvar
+import json
 
 def readTxt(filename):
     lines = open(filename, 'rt')
@@ -28,7 +29,7 @@ def readTxt(filename):
         else:
             globalvar.rulestxt.append(line.rstrip('\n').split(" "))
 
-readTxt("a.txt")
+readTxt("pda.txt")
 # print(globalvar.state)
 # print(globalvar.insymbol)
 # print(globalvar.stasymbol)
@@ -50,9 +51,11 @@ def rulesprocess():
         else:
             rules[globalvar.rulestxt[i][0]] = {globalvar.rulestxt[i][1] : {globalvar.rulestxt[i][2] : {globalvar.rulestxt[i][3]:globalvar.rulestxt[i][4]}}}
     return rules
-print(rulesprocess())
+rules = rulesprocess()
 currState = globalvar.currstate
 input = globalvar.insymbol
 stacksymbol = globalvar.stasymbol
+jsonstring = json.dumps(rules, indent=4)
+print(jsonstring)
 def process(currState, input, stacksymbol):
     print()
