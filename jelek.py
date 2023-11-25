@@ -157,11 +157,17 @@ class MyHTMLParser(HTMLParser):
 
 parser = MyHTMLParser()
 
-path = 'index.html'
-with open(path, 'r', encoding='utf-8') as file:
+pathindex = 'index.html'
+pathlowerindex = 'indexlower.html'
+
+with open(pathindex, 'r', encoding='utf-8') as file:
+    htmlfile = file.read()
+content_lowercase = htmlfile.lower()
+with open(pathlowerindex, 'w', encoding='utf-8') as file:
+    file.write(content_lowercase)
+with open(pathlowerindex, 'r', encoding='utf-8') as file:
     htmlfile = file.read()
 
 parser.feed(htmlfile)
 editArr(arr)
-# print(arr)
 
