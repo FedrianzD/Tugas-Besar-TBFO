@@ -1,8 +1,9 @@
 from html.parser import HTMLParser
+import numpy as np
 
 arr = []
 
-accepted_tag = ['<html>', '<head>', '<body>', '<title>', '<script>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>', '<p>', '<em>', '<b>', '<abbr>', '<strong>', '<small>', '<div>', '<th>', '<td>', '<tr>', '<table>', '<img', '<br', '<hr', '<a', '<button', '<link', '<form', '<input', 'Rel', 'href', 'src', 'alt', 'type', 'action', 'method', '</html>', '</head>', '</body>', '</title>', '</script>', '</h1>', '</h2>', '</h3>', '</h4>', '</h5>', '</h6>', '</p>', '</em>', '</b>', '</abbr>', '</strong>', '</small>', '</div>', '</th>', '</td>', '</tr>', '>', '"', 'get', '/>', 'post', 'submit', 'reset', 'button', '</button>', '</form>', '</a>', '</script>']
+accepted_tag = ['<html>', '<head>', '<body>', '<title>', '<script>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>', '<p>', '<em>', '<b>', '<abbr>', '<strong>', '<small>', '<div>', '<th>', '<td>', '<tr>', '<table>', '<img>', '<br>', '<hr>', '<a>', '<button>', '<link>', '<form>', '<input>', 'Rel', 'href', 'src', 'alt', 'type', 'action', 'method', '</html>', '</head>', '</body>', '</title>', '</script>', '</h1>', '</h2>', '</h3>', '</h4>', '</h5>', '</h6>', '</p>', '</em>', '</b>', '</abbr>', '</strong>', '</small>', '</div>', '</th>', '</td>', '</tr>', '>', '"', 'get', '/>', 'post', 'submit', 'reset', 'button', '</button>', '</form>', '</a>', '</script>']
 
 def editArr(arr):
     for i in range(len(arr)):
@@ -46,7 +47,14 @@ class MyHTMLParser(HTMLParser):
                             # item_i_j mengandung closing tag
                             for item_i_j_k in item_i_j.split(">"):
                                 if item_i_j_k == "":
-                                    arr.append("/>")
+                                    # arr.append(">")
+                                    temp = arr.copy()
+                                    temp.reverse()
+                                    for x in temp:
+                                        if x == '<form' or x=='<link' or x=='<script' or x == '<a' or x=='<img' or x == '<img' or x == '<button' or x == '<input' or x == '<br' or x == '<hr':
+                                            arr.remove(x)
+                                            arr.insert(len(arr) - 1 - temp.index(x), f"{x}>")
+                                            break
                                 else:
                                     tanganiTeks(arr, item_i_j_k)    
                                 # arr.append(f"{item_i_j_k}")    
@@ -75,8 +83,11 @@ with open(path, 'r', encoding='utf-8') as file:
     htmlfile = file.read()
 
 parser.feed(htmlfile)
-
+print()
+print(arr)
+print()
 editArr(arr)
+print(arr)
 
-for i in arr:
-    print(i)
+# for i in arr:
+#     print(i)
