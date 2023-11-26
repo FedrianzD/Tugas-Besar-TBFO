@@ -3,7 +3,7 @@ import numpy as np
 
 arr = []
 
-accepted_tag = ['<html>', '<head>', '<body>', '<title>', '<script>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>', '<p>', '<em>', '<b>', '<abbr>', '<strong>', '<small>', '<div>', '<th>', '<td>', '<tr>', '<table>', '<img>', '<br>', '<hr>', '<a>', '<button>', '<link>', '<form>', '<input>', 'Rel', 'href', 'src', 'alt', 'type', 'action', 'method', '</html>', '</head>', '</body>', '</title>', '</script>', '</h1>', '</h2>', '</h3>', '</h4>', '</h5>', '</h6>', '</p>', '</em>', '</b>', '</abbr>', '</strong>', '</small>', '</div>', '</th>', '</td>', '</tr>', '>', '"', 'get', '/>', 'post', 'submit', 'reset', 'button', '</button>', '</form>', '</a>', '</script>', '%', 'eps', 'class', 'id', 'style', 'text' , 'password', 'email', 'number', 'checkbox', 'input', '=', 'rel', '</table>']
+accepted_tag = ['<html>', '<head>', '<body>', '<title>', '<script>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>', '<p>', '<em>', '<b>', '<abbr>', '<strong>', '<small>', '<div>', '<th>', '<td>', '<tr>', '<table>', '<img>', '<br>', '<hr>', '<a>', '<button>', '<link>', '<form>', '<input>', 'Rel', 'href', 'src', 'alt', 'type', 'action', 'method', '</html>', '</head>', '</body>', '</title>', '</script>', '</h1>', '</h2>', '</h3>', '</h4>', '</h5>', '</h6>', '</p>', '</em>', '</b>', '</abbr>', '</strong>', '</small>', '</div>', '</th>', '</td>', '</tr>', '>', '"', 'get', '/>', 'post', 'submit', 'reset', 'button', '</button>', '</form>', '</a>', '</script>', '%', 'eps', 'class', 'id', 'style', 'text' , 'password', 'email', 'number', 'checkbox', 'input', '=', 'rel', '</table>', 'comment']
 
 
 def editArr(arr):
@@ -122,6 +122,8 @@ def editArr(arr):
     while '=' in arr:
         arr.remove('=')    
     # arr.pop(len(arr)-1)
+    while 'comment' in arr:
+        arr.remove('comment')
 
 def tanganiTeks(arr, item):
     # arr.append("ini teks ->")
@@ -188,22 +190,23 @@ class MyHTMLParser(HTMLParser):
     def handle_comment(self, data):
         arr.append("comment")
 
-parser = MyHTMLParser()
 
-pathindex = 'index.html'
-pathlowerindex = 'indexlower.html'
+pathindex = ''
+pathlowerindex = ''
 
-with open(pathindex, 'r', encoding='utf-8') as file:
-    htmlfile = file.read()
-content_lowercase = htmlfile.lower()
-with open(pathlowerindex, 'w', encoding='utf-8') as file:
-    file.write(content_lowercase)
-with open(pathlowerindex, 'r', encoding='utf-8') as file:
-    htmlfile = file.read()
+def parse(pathindex, pathlowerindex):
+    parser = MyHTMLParser()
+    with open(pathindex, 'r', encoding='utf-8') as file:
+        htmlfile = file.read()
+    content_lowercase = htmlfile.lower()
+    with open(pathlowerindex, 'w', encoding='utf-8') as file:
+        file.write(content_lowercase)
+    with open(pathlowerindex, 'r', encoding='utf-8') as file:
+        htmlfile = file.read()
 
-parser.feed(htmlfile)
-# print(arr)
-editArr(arr)
-print(arr)
+    parser.feed(htmlfile)
+    # print(arr)
+    editArr(arr)
+    print(arr)
 
 

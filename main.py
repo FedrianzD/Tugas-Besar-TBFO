@@ -1,42 +1,14 @@
+import sys
 import globalvar
 import json
 import jelek
 
-def readTxt(filename):
-    lines = open(filename, 'rt')
-    i = 0
-    for line in lines:
-        if i == 0:
-            globalvar.state.extend((line.rstrip('\n').split(" ")))
-            i+=1
-        elif i == 1:
-            globalvar.insymbol.extend((line.rstrip('\n').split(" ")))
-            i+=1
-        elif i == 2:
-            globalvar.stasymbol.extend((line.rstrip('\n').split(" ")))
-            i+=1
-        elif i == 3:
-            globalvar.currstate = line.rstrip('\n')
-            i+=1
-        elif i == 4:
-            globalvar.stack.extend((line.rstrip('\n').split(" ")))
-            i+=1
-        elif i == 5: 
-            globalvar.final = line.rstrip('\n')
-            i+=1
-        elif i == 6:
-            globalvar.sta_str = line.rstrip('\n')
-            i+=1
-        else:
-            globalvar.rulestxt.append(line.rstrip('\n').split(" "))
+
 def top(stack):
     if stack:
         return stack[-1]   
     else:
         return None
-readTxt("pda.txt")
-# jsonstring = json.dumps(rules, indent=4)
-# print(jsonstring)
 def rulesprocess():
     rules = {}
     rules[globalvar.rulestxt[0][0]] = {globalvar.rulestxt[0][1] : {globalvar.rulestxt[0][2] : [globalvar.rulestxt[0][3],globalvar.rulestxt[0][4]]}}
@@ -79,6 +51,55 @@ def process(currState, input, stack):
             return True
     else: # gak di fungsi transisi
         return True
+def readTxt(file_path):
+    content = open(file_path, 'rt')
+    i = 0
+    for line in content:
+        if i == 0:
+            globalvar.state.extend((line.rstrip('\n').split(" ")))
+            i+=1
+        elif i == 1:
+            globalvar.insymbol.extend((line.rstrip('\n').split(" ")))
+            i+=1
+        elif i == 2:
+            globalvar.stasymbol.extend((line.rstrip('\n').split(" ")))
+            i+=1
+        elif i == 3:
+            globalvar.currstate = line.rstrip('\n')
+            i+=1
+        elif i == 4:
+            globalvar.stack.extend((line.rstrip('\n').split(" ")))
+            i+=1
+        elif i == 5: 
+            globalvar.final = line.rstrip('\n')
+            i+=1
+        elif i == 6:
+            globalvar.sta_str = line.rstrip('\n')
+            i+=1
+        else:
+            globalvar.rulestxt.append(line.rstrip('\n').split(" "))
+def readHTML(file_path):
+    jelek.pathindex = file_path
+    jelek.pathlowerindex = f"{file_path[0:-5]}lower.html"
+def run():
+    if len(sys.argv) != 3:
+        print("Masukkan pyton3 main.py file.txt file.html")
+        sys.exit(1)
+
+    arg1 = sys.argv[1]
+    arg2 = sys.argv[2]
+
+    if arg1.lower().endswith('.txt') and arg2.lower().endswith('.html'):
+        readTxt(arg1)
+        readHTML(arg2)
+    else:
+        print("Salah masukkin")
+        sys.exit(1)
+
+    # if __name__ == "__main__":
+    #     run()
+run()
+jelek.parse(jelek.pathindex, jelek.pathlowerindex)
 rules = rulesprocess()
 input = jelek.arr
 input.reverse()
@@ -87,9 +108,9 @@ while True:
     currState = globalvar.currstate
     print(currState, end="")
     print(top(stack), end="")
-    print(input[-1])
+    print(top(input))
     if currState == 'qf':
-        print("Accepted")
+        print("\nAccepted\n")
         break
     selesai = process(currState, input[-1], stack)
     if selesai == True:
@@ -114,7 +135,3 @@ while True:
 
 # jsonstring = json.dumps(rules['q7'], indent=4)
 # print(jsonstring)
-path = 'indexlower.html'
-# with open(path, 'r', encoding='utf-8') as file:
-#     htmlfile = file.read()
-# print(htmlfile)
