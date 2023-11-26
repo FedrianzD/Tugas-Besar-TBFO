@@ -7,7 +7,9 @@ accepted_tag = ['<html>', '<head>', '<body>', '<title>', '<script>', '<h1>', '<h
 
 
 def editArr(arr):
-
+    while 'blank' in arr:
+        arr.remove('blank')
+    
 # Misahin "a" jadi " a "
     i = 0  
     while i < len(arr):
@@ -40,7 +42,6 @@ def editArr(arr):
                 i += 1 
         else:
             i+=1
-
 # Ganti random text jadi %
     i = 0
     while i < len(arr):
@@ -78,27 +79,29 @@ def editArr(arr):
         i += 1
 
 # Merge % sama %
-    arr.append('temp')
     i = 1
     while i < len(arr):
         if arr[i] == '%' and arr[i-1] == '%':
             arr.pop(i)
         else:
             i += 1
-    arr.pop(len(arr)-1)
 
-# Switch = sama elemen selanjutnya. 
+# cari =  dan tambahkan sama dengan pada elemen selanjutnya atau sebelumnya. 
     # arr.append('temp')
     i = 0
+    arrnewacceptedjuga = ['href', 'link', 'rel', 'method', 'action', 'src', 'alt', 'type', '*class', '*id', '*style']
     while i < len(arr) -1 :
         if arr[i] == '=':
-            arr[i+1] = arr[i+1] + '='
+            if arr[i-1] in arrnewacceptedjuga:
+                arr[i-1] = arr[i-1] + '='
+            elif arr[i+1] in arrnewacceptedjuga:
+                arr[i+1] = arr[i+1] + '='
         i += 1
 
-    while '=' in arr:
+    while '=' in arr: # hapus semua '='
         arr.remove('=')    
     # arr.pop(len(arr)-1)
-    while 'comment' in arr:
+    while 'comment' in arr: # hapus semua 'comment'
         arr.remove('comment')
 
 def tanganiTeks(arr, item):
@@ -183,6 +186,6 @@ def parse(pathindex, pathlowerindex):
     parser.feed(htmlfile)
     # print(arr)
     editArr(arr)
-    print(arr)
+    # print(arr)
 
 
