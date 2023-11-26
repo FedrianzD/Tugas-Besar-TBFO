@@ -25,7 +25,7 @@ def process(currState, input, stack):
     symboltostate = {'H': 'q11', 'J':'q12', 'K':'q14', 'L':'q16', 'M': 'q18', 'N':'q20', 'U':'q33', 'V':'q34', 'W':'q35', 'X':'q40', 'F':'q96', 'P':'q96', 'T':'q96'}
     if input in rules[currState]:
         if top(stack) in rules[currState][input]:
-            if input == '"' and top(stack) == 'I' and currState!='q98' and currState!='q55':
+            if input == '"' and top(stack) == 'I' and currState!='q98' and currState!='q55' and currState != 'q95' and currState != 'q82' and currState != 'q79' and currState != 'q84' and currState != 'q86' and currState != 'q26' and currState != 'q23' and currState != 'q48' and currState != 'q89' and currState != 'q88' and currState != 'q73' and currState != 'q74' and currState != 'q75' and currState != 'q76' and currState != 'q77' and currState != 'q61' and currState != 'q63' and currState != 'q62' and currState != 'q51' and currState != 'q55' and currState != 'q73' and currState != 'q65' and currState != 'q68' and currState != 'q69' and currState != 'q93':
                 topnow = top(stack)
                 stack.pop()
                 if top(stack) in symboltostate:
