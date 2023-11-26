@@ -121,7 +121,12 @@ q8 *style $ q87 $
 q8 *class= & q87 &
 q8 *id= & q87 &
 q8 *style & q87 &
-q87 " E q88 IE
+q87 " G q88 IG
+q87 " ! q88 I!
+q87 " @ q88 I@
+q87 " # q88 I#
+q87 " $ q88 I$
+q87 " & q88 I&
 q88 % I q88 I
 q88 " I q8 eps
 q9 </h1> G q7 eps
@@ -580,3 +585,5 @@ q55 " I q56 eps
 q67 get I q68 I
 q67 post I q69 I
 q34 </tr> V q38 eps
+
+q8
