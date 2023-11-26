@@ -107,9 +107,9 @@ input.reverse()
 while True:
     stack = globalvar.stack
     currState = globalvar.currstate
-    # print(currState, end="")
-    # print(top(stack), end="")
-    # print(top(input))
+    print(currState, end="")
+    print(top(stack), end="")
+    print(top(input))
     if currState == 'qf':
         print("\nAccepted\n")
         break
