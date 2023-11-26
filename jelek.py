@@ -12,21 +12,24 @@ def editArr(arr):
     i = 0  
     while i < len(arr):
         if arr[i] not in accepted_tag:
+            
             if arr[i][0] == '"' and arr[i][1] == '"':
                 arr.pop(i)
                 arr.insert(i, '"')
                 arr.insert(i+1, '"')
                 i += 2
             elif arr[i][0] == '"' and arr[i][-1] == '"':
+                yangdinsert = arr[i][1:-1]
                 arr.pop(i)
                 arr.insert(i, '"')
-                arr.insert(i+1, '%')
+                arr.insert(i+1, yangdinsert)
                 arr.insert(i+2, '"')
                 i += 3  
+                print(arr)
             else:
                 i += 1 
         else:
-            i += 1 
+            i+=1
 
 # Nambahin eps ke img
     for i in range(4):
@@ -65,7 +68,7 @@ def editArr(arr):
     i = 2
     while i < len(arr):
         if arr[i] in ['get', 'post']:
-            if arr[i-1] != 'method':
+            if arr[i-2] != 'method':
                 arr[i] = '%'
         i += 1
     arr.pop(0)
@@ -76,7 +79,7 @@ def editArr(arr):
     i = 2
     while i < len(arr):
         if arr[i] in ['text', 'password', 'email', 'number', 'checkbox']:
-            if arr[i-1] != 'type' and arr[i-2] != '<input>':
+            if arr[i-2] != 'type' and arr[i-4] != '<input>':
                 arr[i] = '%'
         i += 1
     arr.pop(len(arr)-1)
@@ -113,8 +116,8 @@ def editArr(arr):
 def tanganiTeks(arr, item):
     # arr.append("ini teks ->")
     if item[0] == "\"" and item[-1] == "\"":
-        if item[1:-1] in ['get', 'post', '"submit"', '"reset"', 'button', 'class', 'id', 'style', 'text' , 'password', 'email', 'number', 'checkbox', 'input']:
-            arr.append(item[1:-1])
+        if item[1:-1] in ['get', 'post', 'submit', 'reset', 'button', 'class', 'id', 'style', 'text' , 'password', 'email', 'number', 'checkbox', 'input']:
+            arr.append(item) # diubah dari item[1:-1]
         else:
             # arr.append("\"")
             arr.append(f"{item}")
@@ -149,11 +152,13 @@ class MyHTMLParser(HTMLParser):
                                             arr.remove(x)                                
                                             break
                                 else:
+                                   
                                     tanganiTeks(arr, item_i_j_k)    
                                     # arr.append(f"{item_i_j_k}")    
                         elif item_i_j == "":
                             arr.append("blank")
                         else:
+                            
                             tanganiTeks(arr, item_i_j)
 
 
