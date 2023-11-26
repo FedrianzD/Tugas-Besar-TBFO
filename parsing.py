@@ -77,7 +77,8 @@ def editArr(arr):
         if arr[i] in ['class', 'id', 'style']:
             arr[i] = f"*{arr[i]}"
         i += 1
-
+    while 'comment' in arr: # hapus semua 'comment'
+        arr.remove('comment')
 # Merge % sama %
     i = 1
     while i < len(arr):
@@ -101,8 +102,7 @@ def editArr(arr):
     while '=' in arr: # hapus semua '='
         arr.remove('=')    
     # arr.pop(len(arr)-1)
-    while 'comment' in arr: # hapus semua 'comment'
-        arr.remove('comment')
+    
 
 def tanganiTeks(arr, item):
     # arr.append("ini teks ->")
@@ -184,8 +184,8 @@ def parse(pathindex, pathlowerindex):
         htmlfile = file.read()
 
     parser.feed(htmlfile)
-    print(arr)
-    editArr(arr)
     # print(arr)
+    editArr(arr)
+    print(arr)
 
 
