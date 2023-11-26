@@ -72,7 +72,7 @@ class MyHTMLParser(HTMLParser):
 
 parser = MyHTMLParser()
 
-path = 'index.html'
+path = './index.html'
 with open(path, 'r', encoding='utf-8') as file:
     htmlfile = file.read()
 
