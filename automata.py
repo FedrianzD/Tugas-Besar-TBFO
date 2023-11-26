@@ -53,7 +53,7 @@ def process(currState, input, stack):
     symboltostate = {'H': 'q11', 'J':'q12', 'K':'q14', 'L':'q16', 'M': 'q18', 'N':'q20', 'U':'q33', 'V':'q34', 'W':'q35', 'X':'q40', 'F':'q96', 'P':'q96', 'T':'q96'}
     if input in rules[currState]:
         if top(stack) in rules[currState][input]:
-            if input == '"' and top(stack) == 'I':
+            if input == '"' and top(stack) == 'I' and currState!='q98':
                 topnow = top(stack)
                 stack.pop()
                 if top(stack) in symboltostate:
