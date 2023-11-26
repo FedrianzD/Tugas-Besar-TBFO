@@ -86,22 +86,29 @@ while True:
     stack = globalvar.stack
     currState = globalvar.currstate
     print(currState, end="")
-    print(top(stack))
+    print(top(stack), end="")
+    print(input[-1])
     if currState == 'qf':
-        print("diterima")
+        print("Accepted")
         break
     selesai = process(currState, input[-1], stack)
     if selesai == True:
         keys = list(rules[currState])
         print()
+        print("Syntax Error")
         print("Expected: ", end="")
         for x in keys:
             if x != keys[-1]:
-                print(f"{x} or", end=" ")
+                if x[0] == '*':
+                    print(f"{x[1:]} or", end=" ")
+                else:
+                    print(f"{x} or", end=" ")
             else:
-                print(f"{x}", end=" ")
-        print(f"but get {input[-1]} instead")
-        print("tidak diterima")
+                if x[0] == '*':
+                    print(f"{x[1:]}", end=" ")
+                else:
+                    print(f"{x}", end=" ")
+        print(f"but get {input[-1]} instead\n")
         break
     input.pop()
 

@@ -12,29 +12,30 @@ def editArr(arr):
     i = 0  
     while i < len(arr):
         if arr[i] not in accepted_tag:
-            
-            if arr[i][0] == '"' and arr[i][1] == '"':
+            if (arr[i][0] == '"' and arr[i][1] == '"') or (arr[i][0] == '”' and arr[i][1] == '”'):
                 arr.pop(i)
                 arr.insert(i, '"')
                 arr.insert(i+1, '"')
                 i += 2
-            elif arr[i][0] == '"' and arr[i][-1] == '"':
+            elif (arr[i][0] == '"' and arr[i][-1] == '"') or (arr[i][0] == '”' and arr[i][-1] == '”'):
                 yangdinsert = arr[i][1:-1]
                 arr.pop(i)
                 arr.insert(i, '"')
                 arr.insert(i+1, yangdinsert)
                 arr.insert(i+2, '"')
                 i += 3  
-            elif arr[i][0] == '"':
+            elif arr[i][0] == '"' or arr[i][0] == '”':
                 yangdinsert = arr[i][1:]
                 arr.pop(i)
                 arr.insert(i, '"')
                 arr.insert(i+1, yangdinsert)
-            elif arr[i][-1] == '"':
+                i+=2
+            elif arr[i][-1] == '"' or arr[i][-1] == '”':
                 yangdinsert = arr[i][0:-1]
                 arr.pop(i)
                 arr.insert(i, yangdinsert)
                 arr.insert(i+1, '"')
+                i+=2
             else:
                 i += 1 
         else:
@@ -131,6 +132,11 @@ def tanganiTeks(arr, item):
             # arr.append("\"")
             arr.append(f"{item}")
             # arr.append("\"")
+    elif item[0] == "\”" and item[-1] == "\”":
+        if item[1:-1] in ['get', 'post', 'submit', 'reset', 'button', 'class', 'id', 'style', 'text' , 'password', 'email', 'number', 'checkbox', 'input']:
+            arr.append(item) # diubah dari item[1:-1]
+        else:
+            arr.append(f"{item}")
     else:
         arr.append(f"{item}")
 
@@ -196,6 +202,8 @@ with open(pathlowerindex, 'r', encoding='utf-8') as file:
     htmlfile = file.read()
 
 parser.feed(htmlfile)
+# print(arr)
 editArr(arr)
 print(arr)
+
 
