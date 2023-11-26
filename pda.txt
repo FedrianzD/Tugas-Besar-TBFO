@@ -39,7 +39,7 @@ q2 <link> B q6 B
 q24 <link> B q6 B
 q3 <link> B q6 B
 q6 rel= B q22 B
-q6 href= B q22 B
+q6 href= B q85 B
 q6 *class= B q85 B
 q6 *id= B q85 B
 q6 *style B q85 B
@@ -162,8 +162,8 @@ q7 <br> T q96 T
 q7 <hr> F q96 F
 q7 <hr> P q96 P
 q7 <hr> T q96 T
-q7 % P q7 P
 q7 % T q7 T
+q7 % P q7 P
 q7 <img> F q53 F
 q7 <img> P q53 P
 q7 <img> T q53 T
@@ -247,6 +247,7 @@ q7 <table> T q33 UT
 q33 </table> U q7 eps
 q33 <tr> U q34 VU
 q34 <tr> V q38 eps
+q34 <td> V q40 XV
 q34 <th> V q35 WV
 q35 % W q36 W
 q35 </th> W q37 eps
@@ -257,7 +258,7 @@ q38 </table> U q7 eps
 q38 <tr> U q39 VU
 q39 <td> V q40 XV
 q39 </tr> V q38 eps
-q40 </td> V q42 XV
+q40 </td> X q42 eps
 q40 % X q41 X
 q41 </td> X q42 eps
 q42 <td> V q40 XV
@@ -296,7 +297,7 @@ q31 <button> T q29 ST
 q31 <table> T q33 UT
 q7 </body> F q43 eps
 q43 </html> A qf eps
-q47 <div> F q7 PF
+q47 <div> F q96 PF
 q47 <h1> F q8 GF
 q47 <h2> F q8 !F
 q47 <h3> F q8 @F
@@ -304,8 +305,8 @@ q47 <h4> F q8 #F
 q47 <h5> F q8 $F
 q47 <h6> F q8 &F
 q47 <p> F q11 HF
-q47 <br> F q7 F
-q47 <hr> F q7 F
+q47 <br> F q96 F
+q47 <hr> F q96 F
 q47 <img> F q53 F
 q47 <a> F q27 QF
 q47 <button> F q29 SF
@@ -449,8 +450,8 @@ q70 <p> T q11 HT
 q70 <input> F q70 F
 q70 <input> P q70 P
 q70 <input> T q70 T
-q70 % P q7 P
 q70 % T q7 T
+q70 % P q7 P
 q70 <img> F q53 F
 q70 <img> P q53 P
 q70 <img> T q53 T
@@ -501,8 +502,8 @@ q96 <p> T q11 HT
 q96 <input> F q70 F
 q96 <input> P q70 P
 q96 <input> T q70 T
-q96 % P q7 P
 q96 % T q7 T
+q96 % P q7 P
 q96 <img> F q53 F
 q96 <img> P q53 P
 q96 <img> T q53 T
@@ -553,8 +554,11 @@ q56 <p> T q11 HT
 q56 <input> F q70 F
 q56 <input> P q70 P
 q56 <input> T q70 T
-q56 % P q7 P
+q7 <input> F q70 F
+q7 <input> P q70 P
+q7 <input> T q70 T
 q56 % T q7 T
+q56 % P q7 P
 q56 <img> F q53 F
 q56 <img> P q53 P
 q56 <img> T q53 T
@@ -575,3 +579,4 @@ q54 " T q55 IT
 q55 " I q56 eps
 q67 get I q68 I
 q67 post I q69 I
+q34 </tr> V q38 eps
