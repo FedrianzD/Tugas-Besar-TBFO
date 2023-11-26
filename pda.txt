@@ -199,9 +199,9 @@ q53 *id= T q94 T
 q53 *style F q94 F
 q53 *style P q94 P
 q53 *style T q94 T
-q57 " F q58 F
-q57 " P q58 P
-q57 " T q58 T
+q57 " F q58 IF
+q57 " P q58 IP
+q57 " T q58 IT
 q94 " F q95 IF
 q94 " P q95 IP
 q94 " T q95 IT
@@ -272,7 +272,7 @@ q64 " T q65 IT
 q65 % I q65 I
 q65 " I q31 eps
 q31 method= T q66 T
-q66 " T q67 T
+q66 " T q67 IT
 q67 get I q68 I
 q67 post I q69 I
 q68 " I q31 eps
@@ -573,3 +573,5 @@ q54 " F q55 IF
 q54 " P q55 IP
 q54 " T q55 IT
 q55 " I q56 eps
+q67 get I q68 I
+q67 post I q69 I
