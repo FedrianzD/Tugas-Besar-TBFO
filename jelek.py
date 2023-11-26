@@ -196,6 +196,5 @@ with open(pathlowerindex, 'r', encoding='utf-8') as file:
     htmlfile = file.read()
 
 parser.feed(htmlfile)
-print(arr)
 editArr(arr)
-print(arr)
+
