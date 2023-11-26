@@ -150,6 +150,12 @@ q11 <b> H q12 KH
 q11 <abbr> H q12 LH
 q11 <strong> H q12 MH
 q11 <small> H q12 NH
+q10 <em> H q12 JH
+q10 <b> H q12 KH
+q10 <abbr> H q12 LH
+q10 <strong> H q12 MH
+q10 <small> H q12 NH
+q10 % H q10 H
 q12 % J q13 J
 q14 % K q15 K
 q16 % L q17 L
