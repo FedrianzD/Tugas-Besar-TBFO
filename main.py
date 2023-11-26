@@ -1,7 +1,7 @@
 import sys
 import globalvar
 import json
-import jelek
+import parser2
 
 
 def top(stack):
@@ -79,8 +79,8 @@ def readTxt(file_path):
         else:
             globalvar.rulestxt.append(line.rstrip('\n').split(" "))
 def readHTML(file_path):
-    jelek.pathindex = file_path
-    jelek.pathlowerindex = f"{file_path[0:-5]}lower.html"
+    parser2.pathindex = file_path
+    parser2.pathlowerindex = f"{file_path[0:-5]}lower.html"
 def run():
     if len(sys.argv) != 3:
         print("Masukkan pyton3 main.py file.txt file.html")
@@ -98,10 +98,11 @@ def run():
 
     # if __name__ == "__main__":
     #     run()
+
 run()
-jelek.parse(jelek.pathindex, jelek.pathlowerindex)
+parser2.parse(parser2.pathindex, parser2.pathlowerindex)
 rules = rulesprocess()
-input = jelek.arr
+input = parser2.arr
 input.reverse()
 while True:
     stack = globalvar.stack
