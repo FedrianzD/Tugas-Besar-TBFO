@@ -103,10 +103,11 @@ def editArr(arr):
     i = 0
     while i < len(arr) -1 :
         if arr[i] == '=':
-            arr[i], arr[i+1] = arr[i+1], arr[i]
-            i += 2
-        else:
-            i += 1
+            arr[i+1] = arr[i+1] + '='
+        i += 1
+
+    while '=' in arr:
+        arr.remove('=')    
     # arr.pop(len(arr)-1)
 
 def tanganiTeks(arr, item):
@@ -182,4 +183,4 @@ with open(pathlowerindex, 'r', encoding='utf-8') as file:
 
 parser.feed(htmlfile)
 editArr(arr)
-
+print(arr)
