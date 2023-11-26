@@ -102,7 +102,8 @@ def editArr(arr):
     while '=' in arr: # hapus semua '='
         arr.remove('=')    
     # arr.pop(len(arr)-1)
-    
+
+
 
 def tanganiTeks(arr, item):
     # arr.append("ini teks ->")
@@ -184,8 +185,8 @@ def parse(pathindex, pathlowerindex):
         htmlfile = file.read()
 
     parser.feed(htmlfile)
-    # print(arr)
-    editArr(arr)
     print(arr)
+    editArr(arr)
+    # print(arr)
 
 

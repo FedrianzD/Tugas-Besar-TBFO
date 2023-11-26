@@ -130,7 +130,10 @@ while True:
                     print(f"{x[1:]}", end=" ")
                 else:
                     print(f"{x}", end=" ")
-        print(f"but get {input[-1]} instead\n")
+        if input[-1][0] == '*':
+            print(f"but get {input[-1][1:]} instead\n")
+        else:
+            print(f"but get {input[-1]} instead\n")
         break
     input.pop()
 
