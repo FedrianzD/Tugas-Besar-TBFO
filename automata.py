@@ -70,6 +70,7 @@ input.reverse()
 while True:
     stack = globalvar.stack
     currState = globalvar.currstate
+    print(currState)
     if currState == 'qf':
         print("diterima")
         break

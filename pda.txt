@@ -1,5 +1,5 @@
 q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18 q19 q20 q21 q22 q23 q24 q25 q26 q27 q28 q29 q30 q31 q32 q33 q34 q35 q36 q37 q38 q39 q40 q41 q42 q43 q44 q45 q46 q47 q48 q49 q50 q51 q52 q53 q54 q55 q56 q57 q58 q59 q60 q61 q62 q63 q64 q65 q66 q67 q68 q69 q70 q71 q72 q73 q74 q75 q76 q77 q78 q79 q80 q81 q82 q83 q84 q85 q86 q87 q88 q89 q90 q91 q92 q93 q94 q95 q96 qf
-<html> </html> <head> </head> <title> </title> <link> </link> <script> </script> <body> </body> <h1> </h1> <h2> </h2> <h3> </h3> <h4> </h4> <h5> </h5> <h6> </h6> <p> </p> <br> <em> </em> <b> </b> <abbr> </abbr> <strong> </strong> <small> </small> <hr> <div> </div> <a> </a> <img> <button> </button> <form> </form> <table> </table> <tr> </tr> <th> </th> <td> </td> % eps " rel href src alt type action method *class *id *style get post text password email number checkbox submit reset button
+<html> </html> <head> </head> <title> </title> <link> </link> <script> </script> <body> </body> <h1> </h1> <h2> </h2> <h3> </h3> <h4> </h4> <h5> </h5> <h6> </h6> <p> </p> <br> <em> </em> <b> </b> <abbr> </abbr> <strong> </strong> <small> </small> <hr> <div> </div> <a> </a> <img> <button> </button> <form> </form> <table> </table> <tr> </tr> <th> </th> <td> </td> % eps " rel= href= src= alt= type= action= method= *class *id *style get post text password email number checkbox submit reset button
 A B C D E F G H I J K L M N P Q R S T U V W X Y Z ! @ # $ &
 q0
 Z
@@ -34,8 +34,8 @@ q84 " I q45 eps
 q84 % I q84 I
 q46 </title> C q2 eps
 q2 <link> B q6 DB
-q6 rel D q22 D
-q6 href D q22 D
+q6 rel= D q22 D
+q6 href= D q22 D
 q6 *class D q85 D
 q6 *id D q85 D
 q6 *style D q85 D
@@ -47,7 +47,7 @@ q23 % I q23 I
 q23 " I q24 eps
 q24 % D q3 D
 q24 </link> D q2 eps
-q24 href D q25 D
+q24 href= D q25 D
 q24 *class D q25 D
 q24 *id D q25 D
 q24 *style D q25 D
@@ -58,7 +58,7 @@ q3 </link> D q2 eps
 q2 <script> B q4 EB
 q4 % E q5 E
 q4 </script> E q2 eps
-q4 src E q32 E
+q4 src= E q32 E
 q4 *class E q32 E
 q4 *id E q32 E
 q4 *style E q32 E
@@ -155,9 +155,9 @@ q7 % T q7 T
 q7 <img> F q53 F
 q7 <img> P q53 P
 q7 <img> T q53 T
-q53 src F q54 F
-q53 src P q54 P
-q53 src T q54 T
+q53 src= F q54 F
+q53 src= P q54 P
+q53 src= T q54 T
 q53 " F q55 IF
 q53 " P q55 IP
 q53 " T q55 IT
@@ -166,9 +166,9 @@ q55 % I q56 eps
 q56 eps F q7 F
 q56 eps P q7 P
 q56 eps T q7 T
-q56 alt F q57 F
-q56 alt P q57 P
-q56 alt T q57 T
+q56 alt= F q57 F
+q56 alt= P q57 P
+q56 alt= T q57 T
 q56 *class F q57 F
 q56 *class P q57 P
 q56 *class T q57 T
@@ -178,9 +178,9 @@ q56 *id T q57 T
 q56 *style F q57 F
 q56 *style P q57 P
 q56 *style T q57 T
-q53 alt F q94 F
-q53 alt P q94 P
-q53 alt T q94 T
+q53 alt= F q94 F
+q53 alt= P q94 P
+q53 alt= T q94 T
 q53 *class F q94 F
 q53 *class P q94 P
 q53 *class T q94 T
@@ -205,7 +205,7 @@ q7 <a> P q27 QP
 q7 <a> T q27 QT
 q27 </a> Q q7 eps
 q27 % Q q28 Q
-q27 href Q q50 Q
+q27 href= Q q50 Q
 q27 *class Q q50 Q
 q27 *id Q q50 Q
 q27 *style Q q50 Q
@@ -218,7 +218,7 @@ q28 </a> Q q7 eps
 q7 <button> F q29 SF
 q7 <button> P q29 SP
 q7 <button> T q29 ST
-q29 type S q59 S
+q29 type= S q59 S
 q29 *class S q59 S
 q29 *id S q59 S
 q29 *style S q59 S
@@ -255,21 +255,21 @@ q42 <td> V q40 XV
 q42 </tr> V q38 eps
 q7 <form> F q31 TF
 q7 <form> P q31 TP
-q31 action T q64 T
+q31 action= T q64 T
 q31 *class T q64 T
 q31 *id T q64 T
 q31 *style T q64 T
 q64 " T q65 IT
 q65 % I q65 I
 q65 " I q31 eps
-q31 method T q66 T
+q31 method= T q66 T
 q66 " T q67 T
 q67 get I q68 I
 q67 post I q69 I
 q68 " I q31 eps
 q69 " I q31 eps
 q31 <div> T q7 PT
-q31 </form> T 7 eps
+q31 </form> T q7 eps
 q31 <h1> T q8 GT
 q31 <h2> T q8 !T
 q31 <h3> T q8 @T
@@ -305,6 +305,7 @@ q47 <form> F q31 TF
 q47 *class F q49 F
 q47 *id F q49 F
 q47 *style F q49 F
+q47 </body> F q43 eps
 q49 " F q89 IF
 q89 % I q89 I
 q89 " I q47 eps
@@ -378,9 +379,9 @@ q91 " I q34 eps
 q91 " I q35 eps
 q91 " I q40 eps
 q91 " I q96 eps
-q70 type F q71 F
-q70 type P q71 P
-q70 type T q71 T
+q70 type= F q71 F
+q70 type= P q71 P
+q70 type= T q71 T
 q71 " F q72 IF
 q71 " P q72 IP
 q71 " T q72 IT
