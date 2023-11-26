@@ -147,10 +147,10 @@ q7 <p> T q11 HT
 q11 % H q10 H
 q11 </p> H q7 eps
 q11 <em> H q12 JH
-q11 <b> H q12 KH
-q11 <abbr> H q12 LH
-q11 <strong> H q12 MH
-q11 <small> H q12 NH
+q11 <b> H q14 KH
+q11 <abbr> H q16 LH
+q11 <strong> H q18 MH
+q11 <small> H q20 NH
 q10 <em> H q12 JH
 q10 <b> H q12 KH
 q10 <abbr> H q12 LH
@@ -162,6 +162,11 @@ q14 % K q15 K
 q16 % L q17 L
 q18 % M q19 M
 q20 % N q21 N
+q12 </em> J q10 eps
+q14 </b> K q10 eps
+q16 </abbr> L q10 eps
+q18 </strong> M q10 eps
+q20 </small> N q10 eps
 q13 </em> J q10 eps
 q15 </b> K q10 eps
 q15 </abbr> L q10 eps
@@ -232,7 +237,7 @@ q27 *id= Q q50 Q
 q27 *style Q q50 Q
 q50 " Q q51 IQ
 q51 % I q51 I
-q51 " I q52 eps
+q51 " I q27 eps
 q52 % Q q28 Q
 q52 </a> Q q7 eps
 q28 </a> Q q7 eps
@@ -600,3 +605,8 @@ q55 " I q56 eps
 q67 get I q68 I
 q67 post I q69 I
 q34 </tr> V q38 eps
+q13 </em> J q10 eps
+q15 </b> K q10 eps
+q17 </abbr> L q10 eps
+q19 </strong> M q10 eps
+q21 </small> N q10 eps
