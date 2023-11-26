@@ -25,7 +25,16 @@ def editArr(arr):
                 arr.insert(i+1, yangdinsert)
                 arr.insert(i+2, '"')
                 i += 3  
-                print(arr)
+            elif arr[i][0] == '"':
+                yangdinsert = arr[i][1:]
+                arr.pop(i)
+                arr.insert(i, '"')
+                arr.insert(i+1, yangdinsert)
+            elif arr[i][-1] == '"':
+                yangdinsert = arr[i][0:-1]
+                arr.pop(i)
+                arr.insert(i, yangdinsert)
+                arr.insert(i+1, '"')
             else:
                 i += 1 
         else:
