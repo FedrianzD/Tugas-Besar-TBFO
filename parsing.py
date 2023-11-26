@@ -4,7 +4,7 @@ import numpy as np
 arr = []
 
 accepted_tag = ['<html>', '<head>', '<body>', '<title>', '<script>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>', '<p>', '<em>', '<b>', '<abbr>', '<strong>', '<small>', '<div>', '<th>', '<td>', '<tr>', '<table>', '<img>', '<br>', '<hr>', '<a>', '<button>', '<link>', '<form>', '<input>', 'Rel', 'href', 'src', 'alt', 'type', 'action', 'method', '</html>', '</head>', '</body>', '</title>', '</script>', '</h1>', '</h2>', '</h3>', '</h4>', '</h5>', '</h6>', '</p>', '</em>', '</b>', '</abbr>', '</strong>', '</small>', '</div>', '</th>', '</td>', '</tr>', '>', '"', 'get', '/>', 'post', 'submit', 'reset', 'button', '</button>', '</form>', '</a>', '</script>', '%', 'eps', 'class', 'id', 'style', 'text' , 'password', 'email', 'number', 'checkbox', 'input', '=', 'rel', '</table>', 'comment']
-
+newarr  = ['text', 'password', 'email', 'number', 'checkbox', 'get', 'post']
 
 def editArr(arr):
     while 'blank' in arr:
@@ -185,7 +185,7 @@ def parse(pathindex, pathlowerindex):
         htmlfile = file.read()
 
     parser.feed(htmlfile)
-    print(arr)
+    # print(arr)
     editArr(arr)
     # print(arr)
 
