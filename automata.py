@@ -54,10 +54,12 @@ def process(currState, input, stack):
     if input in rules[currState]:
         if top(stack) in rules[currState][input]:
             if input == '"' and top(stack) == 'I':
+                topnow = top(stack)
                 stack.pop()
                 if top(stack) in symboltostate:
                     currState = symboltostate[top(stack)] 
                 else:
+                    stack.append(topnow)
                     globalvar.currstate = rules[currState][input][top(stack)][0] # currState
                     # push into stack
                     if rules[currState][input][top(stack)][1] == 'eps': # kalo eps berati di pop
@@ -92,7 +94,7 @@ while True:
         print()
         print("Expected: ", end="")
         for x in keys:
-            print(x, end=" ")
+            print(f"{x} or", end=" ")
         print(f"but get {input[-1]} instead")
         print("tidak diterima")
         break
@@ -104,3 +106,4 @@ path = 'indexlower.html'
 # with open(path, 'r', encoding='utf-8') as file:
 #     htmlfile = file.read()
 # print(htmlfile)
+print(rules['q91'])
