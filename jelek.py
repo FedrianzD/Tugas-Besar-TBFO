@@ -41,30 +41,6 @@ def editArr(arr):
         else:
             i+=1
 
-# Nambahin eps ke img
-    for i in range(4):
-        arr.append('temp')
-    i = 0  
-    while i < len(arr):
-        if (arr[i] == 'src'):
-            if (arr[i+4] != 'alt') and arr[i+2] == '%':
-                arr.insert(i+4, 'eps')
-            elif (arr[i+3] != 'alt') and arr[i+2] == '"':
-                arr.insert(i+3, 'eps')
-        i += 1 
-    for i in range(4):
-        arr.pop(len(arr)-1)
-
-# Nambahin eps ke input
-
-    arr.append('temp')
-    i = 0  
-    while i < len(arr)-1:
-        if (arr[i] == 'input') and (arr[i+1] != 'type'):
-            arr.insert(i+2, 'eps')
-        i = i + 1
-    arr.pop(len(arr)-1)
-
 # Ganti random text jadi %
     i = 0
     while i < len(arr):
