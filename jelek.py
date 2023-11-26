@@ -65,7 +65,7 @@ def editArr(arr):
     i = 2
     while i < len(arr):
         if arr[i] in ['get', 'post']:
-            if arr[i-2] != 'method':
+            if arr[i-1] != 'method':
                 arr[i] = '%'
         i += 1
     arr.pop(0)
@@ -182,5 +182,6 @@ with open(pathlowerindex, 'r', encoding='utf-8') as file:
     htmlfile = file.read()
 
 parser.feed(htmlfile)
+print(arr)
 editArr(arr)
 print(arr)
