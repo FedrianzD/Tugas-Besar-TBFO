@@ -181,9 +181,9 @@ q7 <img> T q53 T
 q53 src= F q54 F
 q53 src= P q54 P
 q53 src= T q54 T
-q53 " F q55 IF
-q53 " P q55 IP
-q53 " T q55 IT
+q54 " F q55 IF
+q54 " P q55 IP
+q54 " T q55 IT
 q55 % I q55 I
 q55 " I q56 eps
 q56 alt= F q57 F
