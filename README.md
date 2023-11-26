@@ -23,7 +23,7 @@ HTML checker adalah sebuah program untuk mengecek apakah sebuah struktur HTML va
 
 - Masukkan file html yang ingin dicek pada file index.html
 - Arahkan directory ke TUGAS-BESAR-TBFO
-- Run di terminal dengan mengetikkan "python3 pda.txt index.html"
+- Run di terminal dengan mengetikkan "python main.py pda.txt index.html"
 
 
 ## Acknowledgements
