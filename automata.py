@@ -85,8 +85,8 @@ input.reverse()
 while True:
     stack = globalvar.stack
     currState = globalvar.currstate
-    # print(currState, end="")
-    # print(top(stack))
+    print(currState, end="")
+    print(top(stack))
     if currState == 'qf':
         print("diterima")
         break
