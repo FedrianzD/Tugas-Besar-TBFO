@@ -1,7 +1,7 @@
 import sys
 import globalvar
 import json
-import parser2
+import parsing
 
 
 def top(stack):
@@ -79,8 +79,8 @@ def readTxt(file_path):
         else:
             globalvar.rulestxt.append(line.rstrip('\n').split(" "))
 def readHTML(file_path):
-    parser2.pathindex = file_path
-    parser2.pathlowerindex = f"{file_path[0:-5]}lower.html"
+    parsing.pathindex = file_path
+    parsing.pathlowerindex = f"{file_path[0:-5]}lower.html"
 def run():
     if len(sys.argv) != 3:
         print("Masukkan pyton3 main.py file.txt file.html")
@@ -100,16 +100,16 @@ def run():
     #     run()
 
 run()
-parser2.parse(parser2.pathindex, parser2.pathlowerindex)
+parsing.parse(parsing.pathindex, parsing.pathlowerindex)
 rules = rulesprocess()
-input = parser2.arr
+input = parsing.arr
 input.reverse()
 while True:
     stack = globalvar.stack
     currState = globalvar.currstate
-    # print(currState, end="")
-    # print(top(stack), end="")
-    # print(top(input))
+    print(currState, end="")
+    print(top(stack), end="")
+    print(top(input))
     if currState == 'qf':
         print("\nAccepted\n")
         break

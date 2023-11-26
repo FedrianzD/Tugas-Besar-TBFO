@@ -184,7 +184,7 @@ def parse(pathindex, pathlowerindex):
         htmlfile = file.read()
 
     parser.feed(htmlfile)
-    # print(arr)
+    print(arr)
     editArr(arr)
     # print(arr)
 
